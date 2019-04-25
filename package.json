@@ -1,0 +1,59 @@
+{
+  "name": "@khaledmqd/admin-dashboard",
+  "version": "1.0.0-beta",
+  "description": "Admin dashboard for VueJS, based on Element UI.",
+  "main": "dist/admin-dashboard.umd.js",
+  "module": "dist/admin-dashboard.esm.js",
+  "unpkg": "dist/admin-dashboard.min.js",
+  "browser": {
+    "./sfc": "src/admin-dashboard.vue"
+  },
+  "scripts": {
+    "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/my-component.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/my-component.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/my-component.min.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "core-js": "^2.6.5",
+    "element-ui": "^2.4.5",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3"
+  },
+  "devDependencies": {
+    "rollup": "^0.57.1",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue": "^2.5.16",
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.5.21"
+  },
+  "keywords": [
+    "admin",
+    "dashboard",
+    "vue",
+    "vuejs",
+    "element",
+    "elementui",
+    "element-ui",
+    "khaledmqd",
+    "admin-dashboard",
+    "admin-panel"
+  ],
+  "author": "khaled",
+  "license": "MIT"
+}
