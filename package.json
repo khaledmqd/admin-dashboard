@@ -59,5 +59,8 @@
     "admin-panel"
   ],
   "author": "khaled",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
