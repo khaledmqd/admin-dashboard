@@ -57733,12 +57733,15 @@ if (typeof window !== 'undefined') {
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a83156a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/admin-dashboard.vue?vue&type=template&id=707cf366&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6a83156a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/admin-dashboard.vue?vue&type=template&id=f78e0ad8&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-container',{class:{'container': true, 'rtl': !_vm.ltr}},[_c('el-aside',{class:{'menu-closed': !_vm.menuOpen, 'menu-opened': _vm.menuOpen}},[_c('el-menu',{staticClass:"el-menu-vertical-demo",attrs:{"router":true,"default-openeds":[_vm.activeItem.path],"default-active":_vm.activeItem.path,"collapse":!_vm.menuOpen}},_vm._l((_vm.items),function(item,index){return _c('div',{key:index},[(item.children)?_c('el-submenu',{attrs:{"index":item.title}},[_c('template',{slot:"title"},[_c('fa',{attrs:{"icon":[item.icon.type, item.icon.name]}}),_c('span',{attrs:{"slot":"title"},slot:"title"},[_vm._v(_vm._s(item.title))])],1),_vm._l((item.children),function(item,index){return _c('div',{key:index},[(item.children)?_c('el-submenu',{attrs:{"index":item.title}},[_c('span',{attrs:{"slot":"title"},slot:"title"},[_vm._v(_vm._s(item.title))]),_vm._l((item.children),function(item,index){return _c('div',{key:index},[(item.children)?_c('el-submenu',{attrs:{"index":item.title}},[_c('span',{attrs:{"slot":"title"},slot:"title"},[_vm._v(_vm._s(item.title))]),_vm._l((item.children),function(item,index){return _c('el-menu-item',{key:index,attrs:{"index":item.path}},[_vm._v(_vm._s(item.title))])})],2):_c('el-menu-item',{attrs:{"index":item.path}},[_vm._v(_vm._s(item.title))])],1)})],2):_c('el-menu-item',{attrs:{"index":item.path}},[_vm._v(_vm._s(item.title))])],1)})],2):_c('el-menu-item',{attrs:{"index":item.path}},[_c('fa',{attrs:{"icon":[item.icon.type, item.icon.name]}}),_c('span',{attrs:{"slot":"title"},slot:"title"},[_vm._v(_vm._s(item.title))])],1)],1)}),0)],1),_c('el-container',[_c('el-header',[_c('el-row',[_c('el-col',{staticClass:"header-toggle-btn",attrs:{"span":2}},[(_vm.ltr)?_c('i',{class:{'el-icon-caret-left': _vm.menuOpen, 'el-icon-caret-right': !_vm.menuOpen},on:{"click":function($event){return _vm.toggleMenu()}}}):_c('i',{class:{'el-icon-caret-right': _vm.menuOpen, 'el-icon-caret-left': !_vm.menuOpen},on:{"click":function($event){return _vm.toggleMenu()}}})]),_c('el-col',{staticClass:"header-title",attrs:{"span":18}},[_vm._t("title",[_vm._v(" ")])],2),_c('el-col',{staticClass:"header-actions",attrs:{"span":4}},[_vm._t("actions")],2)],1)],1),_c('el-main',[(_vm.breadcrumb.length > 0)?_c('el-breadcrumb',{attrs:{"separator":_vm.ltr ? '/' : '\\'}},_vm._l((_vm.breadcrumb),function(item,index){return _c('el-breadcrumb-item',{key:index,attrs:{"to":{ path: item.path }}},[_vm._v("\n              "+_vm._s(item.title)+"\n            ")])}),1):_vm._e(),_c('div',{staticClass:"content"},[_vm._t("default")],2)],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/admin-dashboard.vue?vue&type=template&id=707cf366&
+// CONCATENATED MODULE: ./src/components/admin-dashboard.vue?vue&type=template&id=f78e0ad8&
+
+// EXTERNAL MODULE: ./node_modules/element-ui/lib/theme-chalk/fonts/element-icons.ttf
+var element_icons = __webpack_require__("17d3");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/admin-dashboard.vue?vue&type=script&lang=js&
 //
@@ -57817,6 +57820,7 @@ var staticRenderFns = []
 //
 //
 //
+
 /* harmony default export */ var admin_dashboardvue_type_script_lang_js_ = ({
   props: {
     ltr: {
