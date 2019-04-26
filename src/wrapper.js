@@ -24,5 +24,5 @@ if (GlobalVue) {
 	GlobalVue.use(plugin);
 }
 
-// To allow use as module (npm/webpack/etc.) export component
+// To allow use as module (npm/webpack/etc.) export AdminDashboard
 export default AdminDashboard;

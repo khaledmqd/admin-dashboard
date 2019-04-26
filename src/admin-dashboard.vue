@@ -1,4 +1,6 @@
-<template>
+<script>
+export default {
+  template: `<template lang="html">
   <el-container :class="{'container': true, 'rtl': !ltr}">
     <el-aside :class="{'menu-closed': !menuOpen, 'menu-opened': menuOpen}">
       <el-menu :router="true" :default-openeds="[activeItem.path]" :default-active="activeItem.path" class="el-menu-vertical-demo" :collapse="!menuOpen">
@@ -72,10 +74,7 @@
       </el-main>
     </el-container>
   </el-container>
-</template>
-
-<script>
-export default {
+</template>`,
   props: {
     ltr: {
       type: Boolean,
@@ -93,184 +92,284 @@ export default {
   data() {
     return {
       menuOpen: true,
-      activeItem: "dashboard",
+      activeItem: "dashboard"
       // breadcrumb: [
       //   {
       //     title: 'myTitle',
       //     path: '/myPath'
       //   }
       // ]
-    }
+    };
   },
   methods: {
     toggleMenu() {
-      this.menuOpen = !this.menuOpen
+      this.menuOpen = !this.menuOpen;
     }
   },
   created() {
     if (!this.ltr) {
       document.body.setAttribute("dir", "rtl");
     }
-    let firstItem = this.items[0]
+    let firstItem = this.items[0];
     if (firstItem.children) {
-      let firstItem = firstItem.children[0]
+      let firstItem = firstItem.children[0];
       if (firstItem.children) {
-        let firstItem = firstItem.children[0]
-        this.activeItem = firstItem
-      } else {  
-        this.activeItem = firstItem
-      } 
-    } else {  
-      this.activeItem = firstItem
+        let firstItem = firstItem.children[0];
+        this.activeItem = firstItem;
+      } else {
+        this.activeItem = firstItem;
+      }
+    } else {
+      this.activeItem = firstItem;
+    }
+  }
+};
+</script>
+
+
+<style lang="stylus">
+$colorHeader = #addba3;
+$colorHeaderText = #333;
+$colorItem = #0080007d;
+$colorItemActive = #000;
+$colorItemBG = #fff;
+$colorItemBGActive = #ecf5ff;
+$colorMenu = #fff;
+
+body {
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .el-menu--vertical {
+    left: 200px !important;
+  }
+
+  > .el-menu--vertical {
+    left: 63px !important;
+  }
+
+  &[dir=rtl] {
+    .el-menu--vertical {
+      right: 200px !important;
+    }
+
+    > .el-menu--vertical {
+      right: 63px !important;
+    }
+
+    .el-submenu__title {
+      // .el-submenu__icon-arrow
+      .el-icon-arrow-right {
+        right: 150px !important;
+      }
+    }
+
+    .el-icon-arrow-right, .el-icon-arrow-left {
+      transform: scaleX(-1);
     }
   }
 }
-</script>
 
-<style lang="stylus">
-$colorHeader = #addba3
-$colorHeaderText = #333
-$colorItem = #0080007d
-$colorItemActive = #000
-$colorItemBG = #fff
-$colorItemBGActive = #ecf5ff
-$colorMenu = #fff
+.container {
+  height: calc(100vh - 20px);
+}
 
-body
-  background-color rgba(0,0,0,0.5)
-  .el-menu--vertical
-    left 200px !important
-  > .el-menu--vertical
-    left 63px !important
-  &[dir=rtl]
-    .el-menu--vertical
-      right 200px !important
-    > .el-menu--vertical
-      right 63px !important
-    .el-submenu__title
-      // .el-submenu__icon-arrow
-      .el-icon-arrow-right
-        right 150px !important
-    .el-icon-arrow-right, .el-icon-arrow-left
-      transform scaleX(-1)
-.container
-  height calc(100vh - 20px)
-.el-container
-  background-color #fff
-  border-radius 10px
-  border none
-.el-header
-  background-color $colorHeader
-  color $colorHeaderText
-  line-height 60px
-  border-radius 0 10px 0 0
-.header-title
-  text-align center
-  font-size 18px
-  font-weight bold
-  color $colorHeaderText
-  opacity 0.5
-.header-actions
-  text-align right
-.header-toggle-btn
-  text-align left
-  color $colorMenu
-  i
-    padding 10px
-    cursor pointer
-.el-main
-  padding-top 0 !important
-  z-index 99
-  border-left 1px solid #e6e6e6
-.content
-  padding-top 20px
-.el-submenu__title>span
-  padding-left 20px
-  font-size 16px
-.el-breadcrumb
-  padding 20px
-  margin-left -20px
-  position -webkit-sticky
-  position sticky
-  top 0
-  background-color #fff
-  border-bottom 1px solid rgba(0,0,0,.04)
-.el-menu
-  background-color $colorMenu
-  height 100%
-  &.el-menu--inline
-    background-color rgba(0,255,0,.04) !important
-.el-menu-item
-  color $colorItem !important
-  &.is-active
-    color $colorItemActive !important
-  >span
-    padding-left 20px
-    font-size 16px
-.menu-opened
-  width 250px !important
-.el-aside
-  width 200px
-  transition width 0.5s
-  color #333
-  border-radius 0 10px 10px 0
-  > .el-menu
-    background-color transparent
-    border none
-  &.menu-closed
-    width 50px !important
-    .el-submenu__icon-arrow
-      display none
-.el-menu--vertical
-  width 200px
-.rtl
-  .el-main
-    border-right 1px solid #e6e6e6
-    border-left none !important
-  .el-aside
-    border-radius 0 10px 10px 0
-  &.el-container
-    border-radius 10px
-  .el-menu
-    padding-right 0
-  .el-submenu
-    &.is-opened
-      padding-right 0
-  .el-submenu__title
-    padding-left 0 !important
-    padding-right 20px !important
-    > span
-      padding-left 0 !important
-      padding-right 20px
-  .el-icon-message
-    margin-right 0 !important
-    margin-left 5px
-  .el-submenu__icon-arrow
-    left 20px
-    right auto !important
-  .el-header
-    text-align left
-    border-radius 10px 0 0 0
-  .el-breadcrumb
-    margin-left 0px !important
-    margin-right -20px
-  .el-breadcrumb__item
-    float right
-  [class*=el-col-]
-    float right
-  .header-actions
-    text-align left
-  .header-toggle-btn
-    text-align right
-  .el-menu-item>span
-    padding-right 20px
-  .el-aside
-    transition width 0.5s
-    color #333
-    border-radius 10px 0 0 10px
-    .el-menu-item.single-item
-      width 50px
-    > .el-menu
-      background-color transparent
-      border none
+.el-container {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+}
+
+.el-header {
+  background-color: $colorHeader;
+  color: $colorHeaderText;
+  line-height: 60px;
+  border-radius: 0 10px 0 0;
+}
+
+.header-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: $colorHeaderText;
+  opacity: 0.5;
+}
+
+.header-actions {
+  text-align: right;
+}
+
+.header-toggle-btn {
+  text-align: left;
+  color: $colorMenu;
+
+  i {
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+
+.el-main {
+  padding-top: 0 !important;
+  z-index: 99;
+  border-left: 1px solid #e6e6e6;
+}
+
+.content {
+  padding-top: 20px;
+}
+
+.el-submenu__title>span {
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.el-breadcrumb {
+  padding: 20px;
+  margin-left: -20px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.el-menu {
+  background-color: $colorMenu;
+  height: 100%;
+
+  &.el-menu--inline {
+    background-color: rgba(0, 255, 0, 0.04) !important;
+  }
+}
+
+.el-menu-item {
+  color: $colorItem !important;
+
+  &.is-active {
+    color: $colorItemActive !important;
+  }
+
+  >span {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+}
+
+.menu-opened {
+  width: 250px !important;
+}
+
+.el-aside {
+  width: 200px;
+  transition: width 0.5s;
+  color: #333;
+  border-radius: 0 10px 10px 0;
+
+  > .el-menu {
+    background-color: transparent;
+    border: none;
+  }
+
+  &.menu-closed {
+    width: 50px !important;
+
+    .el-submenu__icon-arrow {
+      display: none;
+    }
+  }
+}
+
+.el-menu--vertical {
+  width: 200px;
+}
+
+.rtl {
+  .el-main {
+    border-right: 1px solid #e6e6e6;
+    border-left: none !important;
+  }
+
+  .el-aside {
+    border-radius: 0 10px 10px 0;
+  }
+
+  &.el-container {
+    border-radius: 10px;
+  }
+
+  .el-menu {
+    padding-right: 0;
+  }
+
+  .el-submenu {
+    &.is-opened {
+      padding-right: 0;
+    }
+  }
+
+  .el-submenu__title {
+    padding-left: 0 !important;
+    padding-right: 20px !important;
+
+    > span {
+      padding-left: 0 !important;
+      padding-right: 20px;
+    }
+  }
+
+  .el-icon-message {
+    margin-right: 0 !important;
+    margin-left: 5px;
+  }
+
+  .el-submenu__icon-arrow {
+    left: 20px;
+    right: auto !important;
+  }
+
+  .el-header {
+    text-align: left;
+    border-radius: 10px 0 0 0;
+  }
+
+  .el-breadcrumb {
+    margin-left: 0px !important;
+    margin-right: -20px;
+  }
+
+  .el-breadcrumb__item {
+    float: right;
+  }
+
+  [class*=el-col-] {
+    float: right;
+  }
+
+  .header-actions {
+    text-align: left;
+  }
+
+  .header-toggle-btn {
+    text-align: right;
+  }
+
+  .el-menu-item>span {
+    padding-right: 20px;
+  }
+
+  .el-aside {
+    transition: width 0.5s;
+    color: #333;
+    border-radius: 10px 0 0 10px;
+
+    .el-menu-item.single-item {
+      width: 50px;
+    }
+
+    > .el-menu {
+      background-color: transparent;
+      border: none;
+    }
+  }
+}
 </style>
