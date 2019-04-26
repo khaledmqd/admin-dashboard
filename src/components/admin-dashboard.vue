@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import 'element-ui/lib/theme-chalk/fonts/element-icons.ttf'
 export default {
   props: {
     ltr: {
