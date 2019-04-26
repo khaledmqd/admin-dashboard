@@ -1,6 +1,4 @@
-<script>
-export default {
-  template: `<template lang="html">
+<template>
   <el-container :class="{'container': true, 'rtl': !ltr}">
     <el-aside :class="{'menu-closed': !menuOpen, 'menu-opened': menuOpen}">
       <el-menu :router="true" :default-openeds="[activeItem.path]" :default-active="activeItem.path" class="el-menu-vertical-demo" :collapse="!menuOpen">
@@ -74,7 +72,10 @@ export default {
       </el-main>
     </el-container>
   </el-container>
-</template>`,
+</template>
+
+<script>
+export default {
   props: {
     ltr: {
       type: Boolean,
